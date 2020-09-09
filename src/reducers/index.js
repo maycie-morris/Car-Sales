@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
     additionalPrice: 0,
     car: {
       price: 26395,
@@ -28,7 +28,9 @@ const initialState = {
                         ...state.car.features, action.payload
                     ]},
                 additionalFeatures: [
-                    ...state.additionalFeatures.id !== action.payload.id
+                    ...state.additionalFeatures.filter(additionalFeature => {
+                        return additionalFeature.id !== action.payload.id
+                    })
                 ]
             }
         
@@ -40,7 +42,7 @@ const initialState = {
                     price: state.car.price - action.payload.price,
                     features: [
                         ...state.car.features.filter(newFeature => {
-                        newFeature.id !== action.payload.id
+                        return newFeature.id !== action.payload.id
                     }
                     )],
 

@@ -5,9 +5,10 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const App = () => {
+  const state = useSelector((state) =>state)
 
   return (
     <div className="boxes">

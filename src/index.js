@@ -4,6 +4,7 @@ import App from './App';
 
 import 'bulma/css/bulma.css';
 import './styles.scss';
+
 import reducer from './reducers'
 
 import { Provider } from 'react-redux';
